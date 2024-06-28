@@ -6,11 +6,9 @@ import { user } from '/src/scripts/objects/user.js'
 import { screen } from '/src/scripts/objects/screen.js'
 
 document.getElementById('btn-search').addEventListener('click', () =>{
-    const userName = document.getElementById('input-search').value
+    const userName = document.querySelector('#input-search').value
     if(validateEmptyInput(userName)) return
     getUserData(userName)
-    
-    console.log(getRepositories(userName))
 })
 
 //DAR ENTER E CHAMAR A FUNÇÃO DE CLICK NO BOTÃO BUSCAR
@@ -26,7 +24,7 @@ document.getElementById('input-search').addEventListener('keyup', (e) =>{
 })
 
 function validateEmptyInput(userName) {
-    if(userName.lenght === 0){
+    if(userName === ''){
         alert('Preencha o campo com o nome do usuário do GitHub.')
         return true
     }
